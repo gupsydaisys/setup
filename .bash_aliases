@@ -23,6 +23,7 @@ alias cdd='cd ../..'
 alias cddd='cd ../../..'
 
 # git aliases
+alias g='git'
 alias gs='git status'
 alias ga='git add'
 alias gaa='git add -A'
