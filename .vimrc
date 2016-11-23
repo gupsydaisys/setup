@@ -19,6 +19,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' " required
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-fugitive'
+Plugin 'slim-template/vim-slim'
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -26,12 +29,25 @@ filetype plugin indent on    " required
 
 " ~ end of vundle stuff ~
 
-syntax on
-syntax enable
+" For autocomplete across buffers
+filetype plugin indent on " http://vi.stackexchange.com/questions/4541/vundle-filetype-plugin-indent-on-messes-with-tabwidth
+syntax enable " Turn on color syntax highlighting
 
 " Removes trailing white space
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces#Automatically_removing_all_trailing_whitespace
 autocmd BufWritePre * :%s/\s\+$//e
+
+"Use TAB to complete when typing words, else inserts TABs as usual.
+"http://vim.wikia.com/wiki/Autocomplete_with_TAB_when_typing_words
+function! Tab_Or_Complete()
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-N>"
+  else
+    return "\<Tab>"
+  endif
+endfunction
+:inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+:set dictionary="/usr/dict/words"
 
 set ai " Auto indent
 set si " Smart indent
@@ -45,20 +61,22 @@ set backspace=indent,eol,start
 set hlsearch " highlight search query
 set incsearch " show search matches as you type
 
-set pastetoggle=<C-p> " toggle paste special on and off
-nnoremap <C-n> :set invnumber<CR> " toggle between line number on and off
 set number
 set title
 set undolevels=1000
 set hidden " hide buffers, don't close - useful for autocomplete
 set autoread " file changed outside vim, automatically read it again
 
+let mapleader = ","
+
+set pastetoggle=<leader>p " toggle paste special on and off
+noremap <leader>n :set invnumber<CR> " toggle between line number on and off
+
 " Buffer
-nnoremap <C-f> :bprevious<CR>
-nnoremap <C-b> :bnext<CR>
-nnoremap <C-d> :bdelete<CR>
+nnoremap <leader>f :bnext<CR>
 
 " NERDTree
 let g:NERDTreeIgnore = ['^_build$', '^node_modules$']
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
+
 
