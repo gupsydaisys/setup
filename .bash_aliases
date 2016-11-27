@@ -17,10 +17,11 @@ alias xg='xargs grep'
 # vim alias
 alias v='vim'
 
-# ls aliases
+# other
 alias la='ls -A'
-alias cdd='cd ../..'
-alias cddd='cd ../../..'
+alias f='open -a Finder ./'
+alias ~="cd ~"
+alias c='clear'
 
 # git aliases
 alias g='git'
@@ -31,12 +32,7 @@ alias gcm='git commit -m'
 alias gca='git commit --amend'
 alias gap='git add -p'
 alias gl='git log --decorate'
-alias glme='git log --decorate author=gupta'
 alias gg='git grep'
 alias gchb='git checkout -b'
 alias gch='git checkout'
-alias gp='git pull'
 alias gd='git diff'
-alias gchr='git checkout --'
-alias gpd='git pull origin master'
-alias grh='git reset HEAD~1 --soft'

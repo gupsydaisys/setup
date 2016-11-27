@@ -7,4 +7,7 @@ replace () {
   fi
 }
 
-
+# Executes command cd and ls in one easy line
+function cl() {
+    cd "$@" && ls;
+}
