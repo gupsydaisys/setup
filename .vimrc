@@ -19,19 +19,17 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' " required
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'https://github.com/vim-scripts/TaskList.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-fugitive'
-Plugin 'slim-template/vim-slim'
+Plugin 'slim-template/vim-slim' " pretty slim syntax highlighting
 call vundle#end()            " required
 
-filetype plugin indent on    " required
-"filetype plugin on
+syntax enable " Turn on color syntax highlighting
+filetype plugin indent on    " required http://vi.stackexchange.com/questions/4541/vundle-filetype-plugin-indent-on-messes-with-tabwidth
 
 " ~ end of vundle stuff ~
-
-" For autocomplete across buffers
-filetype plugin indent on " http://vi.stackexchange.com/questions/4541/vundle-filetype-plugin-indent-on-messes-with-tabwidth
-syntax enable " Turn on color syntax highlighting
 
 " Removes trailing white space
 " http://vim.wikia.com/wiki/Remove_unwanted_spaces#Automatically_removing_all_trailing_whitespace
@@ -48,6 +46,20 @@ function! Tab_Or_Complete()
 endfunction
 :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 :set dictionary="/usr/dict/words"
+
+" ctrl+k toggle high visibility for the cursor
+nnoremap <leader>k :call HighlightNearCursor()<CR>
+function! HighlightNearCursor()
+  if !exists("s:highlightcursor")
+    match Todo /\k*\%#\k*/
+    set cursorline
+    let s:highlightcursor=1
+  else
+    match None
+    set nocursorline
+    unlet s:highlightcursor
+  endif
+endfunction
 
 set ai " Auto indent
 set si " Smart indent
@@ -77,6 +89,6 @@ nnoremap <leader>f :bnext<CR>
 
 " NERDTree
 let g:NERDTreeIgnore = ['^_build$', '^node_modules$']
-nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
 
-
+map <leader>x <Plug>NERDCommenterToggle
