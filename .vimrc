@@ -1,8 +1,4 @@
-" Downloads
-"    https://github.com/ggreer/the_silver_searcher
-
-" vundle stuff
-" see :h vundle for more details or wiki for FAQ
+" vundle
 " https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 " required
