@@ -17,6 +17,9 @@ alias xg='xargs grep'
 # vim alias
 alias v='vim'
 
+# ruby
+alias irb='irb --simple-prompt'
+
 # other
 alias la='ls -A'
 alias f='open -a Finder ./'
