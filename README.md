@@ -1,7 +1,11 @@
-Add the following lines to your `.bash_profile`:
+1. Set up autojump: https://github.com/wting/autojump
+
+2. Set up vundle: https://github.com/VundleVim/Vundle.vim
+
+3. Add the following lines to your `.bash_profile`:
   ```
-  source ~/.setup/.bashrc
-  source ~/.setup/.bash_functions
-  source ~/.setup/.bash_aliases
+  source ~/<path-to-this-repo>/.bashrc
+  source ~/<path-to-this-repo>/.bash_functions
+  source ~/<path-to-this-repo>/.bash_aliases
   ```
 
