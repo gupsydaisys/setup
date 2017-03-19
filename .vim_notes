@@ -1,0 +1,8 @@
+q followed by a-z character to start recording
+q afterwards to stop recording
+@ followed by a character replays the macro
+
+:1 bd => deletes a buffer
+dw => deletes current word
+d5w => deltes 5 words
+ctrl-r => redo
