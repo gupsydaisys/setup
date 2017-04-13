@@ -22,5 +22,10 @@ function list () {
 
 # Executes command cd and ls in one easy line
 function cl() {
-    cd "$@" && la;
+  cd "$@" && la;
+}
+
+# Remove all merged local branches
+function dmb() {
+  git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d
 }
