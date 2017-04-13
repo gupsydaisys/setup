@@ -35,20 +35,6 @@ endfunction
 :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 :set dictionary="/usr/dict/words"
 
-" toggle high visibility for the cursor
-nnoremap <leader>k :call HighlightNearCursor()<CR>
-function! HighlightNearCursor()
-  if !exists("s:highlightcursor")
-    match Todo /\k*\%#\k*/
-    set cursorline
-    let s:highlightcursor=1
-  else
-    match None
-    set nocursorline
-    unlet s:highlightcursor
-  endif
-endfunction
-
 set ai
 set si
 set wrap
@@ -76,7 +62,7 @@ noremap <leader>n :set invnumber<CR>
 nnoremap <leader>f :bnext<CR>
 
 let g:NERDTreeIgnore = ['^_build$', '^node_modules$']
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
 
 map <leader>x <Plug>NERDCommenterToggle
 
