@@ -28,6 +28,7 @@ alias c='clear'
 
 # git aliases
 alias g='git'
+alias gd='git diff'
 alias gs='git status'
 alias ga='git add'
 alias gaa='git add -A'
