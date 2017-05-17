@@ -16,6 +16,7 @@ Plugin 'slim-template/vim-slim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-airline/vim-airline'
+Plugin 'chase/vim-ansible-yaml'
 call vundle#end()
 
 syntax enable
@@ -35,6 +36,20 @@ endfunction
 :inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 :set dictionary="/usr/dict/words"
 
+" toggle high visibility for the cursor
+nnoremap <leader>k :call HighlightNearCursor()<CR>
+function! HighlightNearCursor()
+  if !exists("s:highlightcursor")
+    match Todo /\k*\%#\k*/
+    set cursorline
+    let s:highlightcursor=1
+  else
+    match None
+    set nocursorline
+    unlet s:highlightcursor
+  endif
+endfunction
+
 set ai
 set si
 set wrap
@@ -53,11 +68,14 @@ set undolevels=1000
 set hidden
 set autoread
 
+set colorcolumn=120
+
 let mapleader = ","
 
 set pastetoggle=<leader>p
 noremap <leader>n :set invnumber<CR>
 
+noremap x :X<CR>
 " Buffer
 nnoremap <leader>f :bnext<CR>
 
