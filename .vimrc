@@ -70,6 +70,11 @@ set autoread
 
 set colorcolumn=120
 
+" Further search depth for ctrlp
+let g:ctrlp_max_depth=40
+let g:ctrlp_max_files=0
+
+
 let mapleader = ","
 
 set pastetoggle=<leader>p
