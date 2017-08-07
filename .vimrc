@@ -17,6 +17,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
 Plugin 'vim-airline/vim-airline'
 Plugin 'chase/vim-ansible-yaml'
+Plugin 'rking/ag.vim'
 call vundle#end()
 
 syntax enable
@@ -70,17 +71,15 @@ set autoread
 
 set colorcolumn=120
 
-" Further search depth for ctrlp
+" Better ctrlp path search so that you actually grab all files
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_files=0
-
 
 let mapleader = ","
 
 set pastetoggle=<leader>p
 noremap <leader>n :set invnumber<CR>
 
-noremap x :X<CR>
 " Buffer
 nnoremap <leader>f :bnext<CR>
 
