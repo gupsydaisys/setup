@@ -21,7 +21,14 @@ Plugin 'rking/ag.vim'
 call vundle#end()
 
 syntax enable
+
 filetype plugin indent on
+" show existing tab with 2 spaces width
+set tabstop=2
+" when indenting with '>', use 2 spaces width
+set shiftwidth=2
+" On pressing tab, insert 2 spaces
+set expandtab
 
 " Removes trailing white space
 autocmd BufWritePre * :%s/\s\+$//e
@@ -55,9 +62,6 @@ set ai
 set si
 set wrap
 
-set shiftwidth=2
-set expandtab
-set tabstop=2
 set backspace=indent,eol,start
 
 set hlsearch

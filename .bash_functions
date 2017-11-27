@@ -29,3 +29,10 @@ function cl() {
 function dmb() {
   git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d
 }
+
+# Commits with the story id appended to the start of the message
+# Input: a commit message
+function gcid() {
+  var1="[$(echo $git_branch | cut -f2 -d/)]"
+  git commit -m "$var1 $1"
+}
