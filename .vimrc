@@ -76,8 +76,8 @@ set autoread
 set colorcolumn=120
 
 " Better ctrlp path search so that you actually grab all files
-let g:ctrlp_max_depth=40
-let g:ctrlp_max_files=0
+"let g:ctrlp_max_depth=40
+"let g:ctrlp_max_files=0
 
 let mapleader = ","
 
