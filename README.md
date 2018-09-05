@@ -1,4 +1,7 @@
 1. Set up autojump: https://github.com/wting/autojump
+```
+brew install autojump
+```
 
 2. Set up vundle: https://github.com/VundleVim/Vundle.vim
 
