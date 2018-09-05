@@ -1,4 +1,4 @@
-1. Set up autojump: https://github.com/wting/autojump
+1. Set up autojump: https://github.com/wting/autojump and DO NOT FORGET TO UPDATE YOUR BASH_PROFILE AFTER
 ```
 brew install autojump
 ```
