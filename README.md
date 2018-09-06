@@ -3,6 +3,7 @@
 brew install autojump
 ```
 
+2. Install silver searcher. `brew install the_silver_searcher`
 2. Set up vundle: https://github.com/VundleVim/Vundle.vim
 
 3. Add the following lines to your `.bash_profile`:
