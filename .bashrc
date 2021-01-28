@@ -50,7 +50,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # autojump
-[[ -s /home/sgupta/.autojump/etc/profile.d/autojump.sh ]] && source /home/sgupta/.autojump/etc/profile.d/autojump.sh
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # set prompt
 # set variable identifying the chroot you work in (used in the prompt below)
@@ -58,8 +58,11 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-export GITAWAREPROMPT=~/.setup/git-aware-prompt
+export GITAWAREPROMPT=~/dev/setup/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 export PS1="\n\[\033[01;34m\]\w\${debian_chroot:+(\$debian_chroot)}\[\033[01;32m\]\[\033[00m\] \[\033[00m\]\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\] \$ "
 
-export PATH=mongodb/mongodb-linux-x86_64-ubuntu1604-3.2.10/bin:$PATH
+#export PATH=mongodb/mongodb-linux-x86_64-ubuntu1604-3.2.10/bin:$PATH
+
+# Makes using ccache
+export CCACHE=1

@@ -74,11 +74,11 @@ set undolevels=1000
 set hidden
 set autoread
 
-set colorcolumn=120
-
 " Better ctrlp path search so that you actually grab all files
 "let g:ctrlp_max_depth=40
 "let g:ctrlp_max_files=0
+
+set colorcolumn=120
 
 let mapleader = ","
 
@@ -99,3 +99,8 @@ let g:airline_section_z = airline#section#create(['%p%%', 'linenr', ':%c'])
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let t_Co=256
+
+" https://andrew.stwrt.ca/posts/vim-ctags/
+" https://vi.stackexchange.com/questions/7011/how-to-go-to-function-or-class-definition-in-current-file/7013
+" http://majutsushi.github.io/tagbar/
+nnoremap <leader>tag :CtrlPTag<cr>

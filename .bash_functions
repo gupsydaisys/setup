@@ -5,8 +5,9 @@
 function replace () {
   if [ $# -eq 2 ]
     then
+      grep -ril $2 * | xargs perl -p -i -e "s/$1/$2/g"
       #grep -rl $1 ./* | xargs sed -i "" "s/$1/$2/gp"
-      perl -pi -w -e "s/$1/$2/g;" ./*
+      #perl -pi -w -e "s/$1/$2/g;" ./*
       grep -rl $2 ./*
   fi
 }
@@ -28,6 +29,22 @@ function cl() {
 # Remove all merged local branches
 function dmb() {
   git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d
+}
+
+# Create a pr from msg
+#pr "my-branch1" <<MSG
+#This is a pull request title for my-branch1
+
+#This is a description of my pull request. Markdown body goes here.
+#MSG
+function prme() {
+  git push -u origin "$1"
+  hub pull-request -h "$1" -F -
+}
+
+function t() {
+  #moto_server s3 -p3000 > /dev/null 2>&1 &
+  python -m pytest -v $1
 }
 
 # Commits with the story id appended to the start of the message

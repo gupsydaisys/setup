@@ -23,10 +23,12 @@ alias irb='irb --simple-prompt'
 # other
 alias la='ls -A'
 alias f='open -a Finder ./'
+alias opensesame='open -a TextEdit'
 alias ~="cd ~"
 alias c='clear'
-
+alias t='FLASK_ENV="testing" python3 -m pytest -v'
 # git aliases
+alias gcats="git commit --allow-empty -m 'meow'"
 alias g='git'
 alias gd='git diff'
 alias gs='git status'
@@ -42,3 +44,11 @@ alias gb='git branch'
 alias gchb='git checkout -b'
 alias gch='git checkout'
 alias gcm='git commit -m'
+alias aa='astro airflow'
+alias aa-restart='astro airflow stop && astro airflow start'
+alias pip3='python3 -m pip'
+
+# ssh
+alias ssh-onto-test-bastion='ssh -i ~/.ssh/test-bastion ec2-user@ec2-54-92-133-1.compute-1.amazonaws.com'
+alias ssh-onto-bastion='ssh -i ~/.ssh/serena-ec2-key gsuitefederatedrole-serenad85826@ec2-52-207-201-217.compute-1.amazonaws.com'
+alias ssh-onto-death="ssh -i ~/.ssh/serena-ec2-key gsuitefederatedrole-serenad85826@ec2-52-70-203-49.compute-1.amazonaws.com"
